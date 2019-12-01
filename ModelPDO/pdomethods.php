@@ -15,8 +15,8 @@ function get_questions($userid)
     return $accountquestion;
 }
 
-function get_email($userid)             ///should be querying from accounts table b/c everything in questions table is just a copy
-{
+function get_email($userid)             //should be querying from accounts table b/c everything in questions table is just a copy
+{                                       //b/c the newly inserted question was inserted into a row with a NULL email
     global $db;
     $query = 'SELECT email FROM accountsIS218 WHERE id =: id';
 
