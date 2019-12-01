@@ -106,9 +106,7 @@ $emailval = get_email($userId);
     -->
         <!--<button>Add Question</button></a>-->
     <button class="btn btn-default btn-block">
-        <a href = "../QuestionForm/question-form.php?id=<?php echo $userId; ?>"
-        href = "../QuestionForm/question-form.php?id=<?php echo $emailval; ?>"
-        >Add Question</a>
+        <a href = "../QuestionForm/question-form.php?id=<?php echo $userId; ?>&email=<?php echo $emailval; ?>">Add Question</a>
     </button>
 
 <?php
