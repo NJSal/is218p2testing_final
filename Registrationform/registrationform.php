@@ -98,6 +98,8 @@ $statement->bindValue(':password', $password);
 //Execute the SQL Query
 $statement->execute();
 
+$id = $db->getLastInsertedId;
+
 //Close the datab
 $statement->closeCursor();
 /*
@@ -117,7 +119,7 @@ $password = filter_input(INPUT_POST, 'password');
 
 
 
-header("Location: ../LoginForm/displayquestion.php?fname=$firstname&lname=$lastname&birthday=$birthday&email=$email&password=$password");
+header("Location: ../LoginForm/displayquestion.php?fname=$firstname&lname=$lastname&birthday=$birthday&email=$email&password=$password&id=$id");
 
 
 
