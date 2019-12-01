@@ -59,13 +59,13 @@ $body = $about;
 $idvalue = $userId;
 
 $query2 = 'INSERT INTO questions
-          (ownerid, title, body, skills)
+          (owneremail,ownerid, title, body, skills)
           VALUES
-          (:ownerid,:title, :body, :skills)';
+          (:owneremail,:ownerid,:title, :body, :skills)';
 
 $statement = $db->prepare($query2);
 
-//$statement->bindValue(':owneremail', $email);
+$statement->bindValue(':owneremail', $emailval);
 $statement->bindValue(':ownerid', $idvalue);
 $statement->bindValue(':title', $title);
 $statement->bindValue(':body', $body);
