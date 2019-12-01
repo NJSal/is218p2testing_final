@@ -15,7 +15,7 @@ function get_questions($userid)
     return $accountquestion;
 }
 
-function get_email($userid)
+function get_email($userid)             ///should be querying from accounts table b/c everything in questions table is just a copy
 {
     global $db;
     $query = 'SELECT email FROM accountsIS218 WHERE id =: id';
@@ -26,7 +26,6 @@ function get_email($userid)
     $emailvalue = $statement->fetch();
     $statement->closeCursor();
     $emailresult = $emailvalue['email'];
-
     return $emailresult;
 }
 ?>
