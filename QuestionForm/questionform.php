@@ -58,6 +58,8 @@ $title = $name;
 $body = $about;
 $idvalue = $userId;
 
+$emailresult = $emailval;
+
 $query2 = 'INSERT INTO questions
           (owneremail,ownerid, title, body, skills)
           VALUES
@@ -65,7 +67,7 @@ $query2 = 'INSERT INTO questions
 
 $statement = $db->prepare($query2);
 
-$statement->bindValue(':owneremail', $emailval);
+$statement->bindValue(':owneremail', $emailresult);
 $statement->bindValue(':ownerid', $idvalue);
 $statement->bindValue(':title', $title);
 $statement->bindValue(':body', $body);
