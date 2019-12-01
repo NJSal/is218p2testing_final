@@ -18,14 +18,14 @@ function get_questions($userid)
 function get_email($userid)
 {
     global $db;
-    $query = 'SELECT owneremail FROM questions WHERE ownerid =: id';
+    $query = 'SELECT email FROM accountsIS218 WHERE id =: id';
 
     $statement = $db->prepare($query);
     $statement->bindValue(':id',$userid);
     $statement->execute();
     $emailvalue = $statement->fetch();
     $statement->closeCursor();
-    $emailresult = $emailvalue['owneremail'];
+    $emailresult = $emailvalue['email'];
 
     return $emailresult;
 }
