@@ -60,10 +60,10 @@ $idvalue = $userId;
 
 $emailresult = $emailval;
 
-$query2 = "INSERT INTO questions
+$query2 = 'INSERT INTO questions
           (owneremail,ownerid, title, body, skills)
           VALUES
-          ('$emailval',:ownerid,:title, :body, :skills)";
+          (:owneremail,:ownerid,:title, :body, :skills)';
 
 $statement = $db->prepare($query2);
 $statement->bindValue(':owneremail', $emailresult);
